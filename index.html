@@ -19,6 +19,16 @@
             max-width: 500px;
             margin: 0 auto;
             padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .logo {
+            width: 100px; /* Adjust the width as needed */
+            height: auto; /* Maintain aspect ratio */
+            margin-right: 20px;
         }
 
         input[type="text"] {
@@ -52,16 +62,25 @@
         @media only screen and (max-width: 600px) {
             .container {
                 padding: 10px;
+                flex-direction: column;
+            }
+
+            .logo {
+                margin-right: 0;
+                margin-bottom: 20px;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <img class="logo" src="https://i.ibb.co/DDQJdxt/LOGO-CILIK.png" alt="Website Logo">
+        <img class="logo" src="https://i.ibb.co/6m60p53/oke.png" alt="Website Logo">
         <h1>PENGUMUMAN KELULUSAN SMA XAVERIUS BANDARLAMPUNG</h1>
-        <p id="countdown"></p>
-        <div id="inputSection" style="display:none;">
+    </div>
+
+    <p id="countdown"></p>
+    <div id="inputSection" style="display:none;">
+        <div class="container">
             <p>Masukkan NISN</p>
             <input type="text" id="inputBox">
             <button onclick="convertNumber()">Submit</button>
