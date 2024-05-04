@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Number to URL Converter</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        p#error-message {
+            color: red;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .container {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>PENGUMUMAN KELULUSAN SMA XAVERIUS BANDARLAMPUNG</h1>
+        <p>Masukkan NISN</p>
+        <input type="text" id="inputBox">
+        <button onclick="convertNumber()">Submit</button>
+        <p id="output"></p>
+        <p id="error-message"></p>
+    </div>
+
+    <script>
+        const inputNumber = ["1080", "1234", "5678"]; // Specify your number inputs here
+        const inputUrl = ["https://www.example1.com", "https://www.example2.com", "https://www.example3.com"]; // Specify corresponding URLs here
+
+        function convertNumber() {
+            const input = document.getElementById("inputBox").value;
+            const index = inputNumber.indexOf(input);
+            if (index !== -1) {
+                document.getElementById("output").innerHTML = "<a href='" + inputUrl[index] + "'>" + inputUrl[index] + "</a>";
+                document.getElementById("error-message").innerHTML = "";
+            } else {
+                document.getElementById("output").innerHTML = "";
+                document.getElementById("error-message").innerHTML = "NISN : " + input + " tidak ditemukan. Periksa kembali dengan cermat";
+            }
+        }
+    </script>
+</body>
+</html>
